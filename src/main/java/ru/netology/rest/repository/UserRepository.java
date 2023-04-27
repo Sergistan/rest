@@ -21,7 +21,7 @@ public class UserRepository {
         authoritiesMap.put(user3.getUser(), user3);
     }
 
-    public List<Authorities> getUserAuthorities(String user, String password) {
+    public List<Authorities> getUserAuthorities(User user) {
         User searchUser = authoritiesMap.get(user);
         return (searchUser != null && searchUser.getPassword().equals(password) ? searchUser.getAuthorities() : Collections.emptyList());
     }
