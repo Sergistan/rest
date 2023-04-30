@@ -17,10 +17,10 @@ public class AuthorizationService {
     UserRepository userRepository;
 
     public List<Authorities> getAuthorities(User user) {
-        if (isEmpty(user) || isEmpty(password)) {
+        if (isEmpty(user.getUser()) || isEmpty(user.getPassword())) {
             throw new InvalidCredentials("User name or password is empty");
         }
-        List<Authorities> userAuthorities = userRepository.getUserAuthorities(user);
+        List<Authorities> userAuthorities = userRepository.getUserAuthorities(user.getUser(), user.getPassword());
         if (isEmpty(userAuthorities)) {
             throw new UnauthorizedUser("Unknown user " + user);
         }
