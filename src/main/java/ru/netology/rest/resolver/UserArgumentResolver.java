@@ -5,11 +5,9 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import ru.netology.rest.authorities.Authorities;
 import ru.netology.rest.model.User;
 
 import java.util.Collections;
-import java.util.List;
 
 public class UserArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
